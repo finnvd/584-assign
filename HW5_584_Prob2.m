@@ -15,9 +15,9 @@ for i=1:120
 end
 
 B=A.';
-C=A*B;
+C=B*A;
 
-v=randn(32256,1);   %Initial vector guess
+v=randn(120,1);   %Initial vector guess
 iter=20;        %Max number of iterations
 
 for i=1:iter
@@ -26,5 +26,5 @@ for i=1:iter
     v=Cv/norm(Cv);
 end
 
+[U,S,V]=svd(C);
 v=Cv/lam;
-
